@@ -1,6 +1,5 @@
 .nyc_output
 coverage
-dist
 examples/*.png
 examples/*.jpeg
 node_modules
