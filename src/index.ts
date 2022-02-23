@@ -1,15 +1,15 @@
 import * as Canvas from "canvas";
 
-Canvas.registerFont(require("path").resolve(__dirname, "../assets/Swift.ttf"), {
+Canvas.registerFont(require("path").resolve(__dirname, "../assets/Font.ttf"), {
 	family: "swift"
 });
 
 const randomText = (): string =>
-		Math.random()
-		    .toString(36)
-		    .replace(/[^a-z]|[gkqr0o5s]+/gi, "")
-		    .substring(0, 9)
-		    .toUpperCase(),
+	Math.random()
+		.toString(36)
+		.replace(/[^a-z]|[gkqr0o5s]+/gi, "")
+		.substring(0, 9)
+		.toUpperCase(),
 	shuffleArray = (arr: number[]): number[] => {
 		let i: number = arr.length,
 			temp: number,
@@ -50,25 +50,25 @@ class Captcha {
 		ctx.beginPath();
 		const coords = [];
 		for (let i = 0; i < 4; i++) {
-		    if (!coords[i])
-			coords[i] = [];
-		    for (let j = 0; j < 5; j++)
-			coords[i][j] = Math.round(Math.random() * 80) + j * 80;
-		    if (!(i % 2))
-			coords[i] = shuffleArray(coords[i]);
+			if (!coords[i])
+				coords[i] = [];
+			for (let j = 0; j < 5; j++)
+				coords[i][j] = Math.round(Math.random() * 80) + j * 80;
+			if (!(i % 2))
+				coords[i] = shuffleArray(coords[i]);
 		}
 		for (let i = 0; i < coords.length; i++) {
-		    if (!(i % 2)) {
-			for (let j = 0; j < coords[i].length; j++) {
-			    if (!i) {
-				ctx.moveTo(coords[i][j], 0);
-				ctx.lineTo(coords[i + 1][j], 400);
-			    } else {
-				ctx.moveTo(0, coords[i][j]);
-				ctx.lineTo(400, coords[i + 1][j]);
-			    }
+			if (!(i % 2)) {
+				for (let j = 0; j < coords[i].length; j++) {
+					if (!i) {
+						ctx.moveTo(coords[i][j], 0);
+						ctx.lineTo(coords[i + 1][j], 400);
+					} else {
+						ctx.moveTo(0, coords[i][j]);
+						ctx.lineTo(400, coords[i + 1][j]);
+					}
+				}
 			}
-		    }
 		}
 		ctx.stroke();
 		// Set style for circles
@@ -98,24 +98,24 @@ class Captcha {
 		ctx.beginPath();
 		this._value = "";
 		while (this._value.length !== 9)
-		    this._value = randomText();
+			this._value = randomText();
 		ctx.fillText(this._value, 0, 0);
 		// Draw foreground noise
 		ctx.restore();
 		for (let i = 0; i < 5000; i++) {
-		    ctx.beginPath();
-		    let color = "#";
-		    while (color.length < 7)
-			color += Math.round(Math.random() * 16).toString(16);
-		    color += "a0";
-		    ctx.fillStyle = color;
-		    ctx.arc(Math.round(Math.random() * 400), // X coordinate
-			Math.round(Math.random() * _h), // Y coordinate
-			Math.random() * 2, // Radius
-			0, // Start angle
-			Math.PI * 2 // End angle
-		    );
-		    ctx.fill();
+			ctx.beginPath();
+			let color = "#";
+			while (color.length < 7)
+				color += Math.round(Math.random() * 16).toString(16);
+			color += "a0";
+			ctx.fillStyle = color;
+			ctx.arc(Math.round(Math.random() * 400), // X coordinate
+				Math.round(Math.random() * _h), // Y coordinate
+				Math.random() * 2, // Radius
+				0, // Start angle
+				Math.PI * 2 // End angle
+			);
+			ctx.fill();
 		}
 	}
 
