@@ -20,7 +20,7 @@ describe("src/index.ts", function () {
 					assert.strictEqual(typeof captcha.value, "string");
 				});
 				it("should be 6 characters long", function () {
-					assert.strictEqual(captcha.value.length, 6);
+					assert.strictEqual(captcha.value.length, 9);
 				});
 				it("should only contain letters", function () {
 					assert.match(captcha.value, /^[a-z]+$/i);
