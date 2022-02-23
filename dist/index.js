@@ -66,17 +66,6 @@ class Captcha {
         // Set style for circles
         ctx.fillStyle = "#000";
         ctx.lineWidth = 0;
-        // Draw circles
-        // for (let i = 0; i < 200; i++) {
-        //     ctx.beginPath();
-        //     ctx.arc(Math.round(Math.random() * 360) + 20, // X coordinate
-        //         Math.round(Math.random() * 360) + 20, // Y coordinate
-        //         Math.round(Math.random() * 7) + 1, // Radius
-        //         0, // Start anglez
-        //         Math.PI * 2 // End angle
-        //     );
-        //     ctx.fill();
-        // }
         // Set style for text
         ctx.font = "bold 60px Font";
         ctx.fillStyle = "#000";
@@ -84,7 +73,7 @@ class Captcha {
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
         ctx.translate(0, _h);
-        ctx.translate(Math.round(Math.random() * 100 - 50) + 200, -1 * Math.round(Math.random() * (_h / 4) - _h / 8) - _h / 2);
+        // ctx.translate(Math.round(Math.random() * 100 - 50) + 250, -1 * Math.round(Math.random() * (_h / 4) - _h / 8) - _h / 2);
         ctx.rotate(Math.random() - 0.5);
         // Set text value and print it to canvas
         ctx.beginPath();
