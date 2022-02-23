@@ -1,7 +1,7 @@
 import * as Canvas from "canvas";
 
 Canvas.registerFont(require("path").resolve(__dirname, "../assets/Font.ttf"), {
-	family: "swift"
+	family: "Font"
 });
 
 const randomText = (): string =>
