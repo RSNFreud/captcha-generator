@@ -81,7 +81,8 @@ class Captcha {
 		// Set position for text
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
-		ctx.translate(0, _h);
+		// ctx.translate(0, _h);
+		ctx.translate(200, 125);
 		// ctx.translate(Math.round(Math.random() * 100 - 50) + 250, -1 * Math.round(Math.random() * (_h / 4) - _h / 8) - _h / 2);
 		ctx.rotate(Math.random() - 0.5);
 		// Set text value and print it to canvas
