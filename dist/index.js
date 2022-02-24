@@ -5,7 +5,7 @@ Canvas.registerFont(require("path").resolve(__dirname, "../assets/Font.ttf"), {
 });
 const randomText = () => Math.random()
     .toString(36)
-    .replace(/[^a-z]|[gkqr0o5s]+/gi, "")
+    .replace(/[^a-z]|[gkqr0o5s2z]+/gi, "")
     .substring(0, 9)
     .toUpperCase(), shuffleArray = (arr) => {
     let i = arr.length, temp, randomIndex;
